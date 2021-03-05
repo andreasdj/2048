@@ -15,6 +15,7 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="GazeFriendly" content="True">
 </head>
 <body>
   <div class="container">
@@ -28,15 +29,23 @@
 
     <div class="above-game">
       <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
-      <a class="restart-button">New Game</a>
+      <gazable-button class="restart-button">New Game</gazable-button>
     </div>
 
     <div class="game-container">
+      <!--TODO: console log errors for small elements requesting gaze enabling -->
+      <!--TODO: set gaze-focus css selector (or preferably a gaze-focused="true" attribute) on focus and gaze-activate css on activate, should be a pseudo class selector in the best of worlds -->
+      <!--See: https://github.com/whatwg/html/issues/2271, https://github.com/WICG/webcomponents/issues/300, use gaze-focused="true" now -->
+      <gazable-button class="game-action-button move-left">&#x2190;</gazable-button>
+      <gazable-button class="game-action-button move-up">&#x2191;</gazable-button>
+      <gazable-button class="game-action-button move-right">&#x2192;</gazable-button>
+      <gazable-button class="game-action-button move-down">&#x2193;</gazable-button>
+      
       <div class="game-message">
         <p></p>
         <div class="lower">
-	        <a class="keep-playing-button">Keep going</a>
-          <a class="retry-button">Try again</a>
+	        <gazable-button class="keep-playing-button">Keep going</gazable-button>
+          <gazable-button class="retry-button">Try again</gazable-button>
         </div>
       </div>
 
@@ -77,14 +86,12 @@
     </p>
     <hr>
     <p>
-    <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone via <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
-    </p>
-    <hr>
-    <p>
     Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
     </p>
   </div>
 
+
+  <script src="js/gazable_button.js"></script>
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
   <script src="js/animframe_polyfill.js"></script>

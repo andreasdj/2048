@@ -32,7 +32,7 @@ html, body {
 }
 
 body {
-  margin: 80px 0;
+  margin: $grid-spacing * 2 0;
 }
 
 .heading {
@@ -46,7 +46,46 @@ h1.title {
   display: block;
   float: left;
 }
+/*---------------------------------
+Added styles below
+----------------------------------*/
+gazable-button {
+  background-color: #776E65;
+  color:#faf8ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 
+  &[gaze-focused] {
+    background-color: cadetblue;
+  }
+}
+.game-action-button {
+  position: absolute; 
+  height: $tile-size; 
+  width: $tile-size;
+
+  &.move-left {
+    left: calc(-#{$tile-size} - #{$grid-spacing}); 
+    top: calc(50% - #{$tile-size * 0.5});
+  }
+  &.move-up {
+    top: calc(-#{$tile-size} - #{$grid-spacing});
+    left: calc(50% - #{$tile-size * 0.5});
+  }
+  &.move-right {
+    right: calc(-#{$tile-size} - #{$grid-spacing});
+    top: calc(50% - #{$tile-size  * 0.5});
+  }
+  &.move-down {
+    bottom: calc(-#{$tile-size} - #{$grid-spacing});
+    left: calc(50% - #{$tile-size * 0.5});
+  }
+}
+/*---------------------------------
+Added styles above
+----------------------------------*/
 @include keyframes(move-up) {
   0% {
     top: 25px;
@@ -170,7 +209,8 @@ hr {
 // Game field mixin used to render CSS at different width
 @mixin game-field {
   .game-container {
-    margin-top: $game-container-margin-top;
+    margin: calc(#{$tile-size} + #{$grid-spacing * 2}) 0;
+    // margin-top: $game-container-margin-top;
     position: relative;
     padding: $grid-spacing;
 

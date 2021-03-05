@@ -73,6 +73,12 @@ KeyboardInputManager.prototype.listen = function () {
   this.bindButtonPress(".restart-button", this.restart);
   this.bindButtonPress(".keep-playing-button", this.keepPlaying);
 
+  // Respond to game action buttons
+  this.bindButtonPress(".game-action-button.move-left", () => this.emit("move", 3));
+  this.bindButtonPress(".game-action-button.move-up", () => this.emit("move", 0));
+  this.bindButtonPress(".game-action-button.move-right", () => this.emit("move", 1));
+  this.bindButtonPress(".game-action-button.move-down", () => this.emit("move", 2));
+
   // Respond to swipe events
   var touchStartClientX, touchStartClientY;
   var gameContainer = document.getElementsByClassName("game-container")[0];
