@@ -156,7 +156,7 @@ Added styles above
 p {
   margin-top: 0;
   margin-bottom: 1vmin;
-  line-height: 1.65;
+  line-height: 1.4;
 }
 
 a {
@@ -261,10 +261,9 @@ hr {
         margin-top: 5.9vmin;
       }
 
-      a {
+      gazable-button {
         @include button;
         margin-left: .9vmin;
-        // margin-top: 59px;
 
 	&.keep-playing-button {
 	  display: none;
@@ -511,7 +510,13 @@ hr {
 .game-explanation {
   margin-top: 5vmin;
 }
-
+.game-credits {
+  transform: rotate(90deg);
+  position: absolute;
+  left: 1.4vmin;
+  top: 2vmin;
+  transform-origin: left center;
+}
 // @include smaller($mobile-threshold) {
 //   // Redefine variables for smaller screens
 //   $field-width: 280px;

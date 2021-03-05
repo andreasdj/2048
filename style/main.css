@@ -157,7 +157,7 @@ Added styles above
 p {
   margin-top: 0;
   margin-bottom: 1vmin;
-  line-height: 1.65;
+  line-height: 1.4;
 }
 
 a {
@@ -250,7 +250,7 @@ hr {
   margin-top: 5.9vmin;
 }
 
-.game-container .game-message a {
+.game-container .game-message gazable-button {
   display: inline-block;
   background: #8f7a66;
   border-radius: 3px;
@@ -262,7 +262,7 @@ hr {
   margin-left: .9vmin;
 }
 
-.game-container .game-message a.keep-playing-button {
+.game-container .game-message gazable-button.keep-playing-button {
   display: none;
 }
 
@@ -598,5 +598,15 @@ hr {
 
 .game-explanation {
   margin-top: 5vmin;
+}
+
+.game-credits {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  position: absolute;
+  left: 1.4vmin;
+  top: 2vmin;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
 }
 /*# sourceMappingURL=main.css.map */
